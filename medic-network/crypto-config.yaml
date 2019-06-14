@@ -1,0 +1,99 @@
+# Copyright IBM Corp. Todos los derechos reservados.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# ------------------------------------------------- ----------------------------
+# "OrdererOrgs" - Definición de organizaciones que gestionan nodos de ordenante
+# ------------------------------------------------- ----------------------------
+OrdererOrgs:
+  # ------------------------------------------------- ----------------------------
+  # Ordenante
+  # ------------------------------------------------- ----------------------------
+  - Name: Orderer
+    Domain: etsiit.ugr
+    # ------------------------------------------------- ----------------------------
+    # "Especificaciones" - Ver PeerOrgs a continuación para una descripción completa
+    # ------------------------------------------------- ----------------------------
+    Specs:
+      - Hostname: orderer
+# ------------------------------------------------- ----------------------------
+# "PeerOrgs" - Definición de organizaciones que administran nodos pares
+# ------------------------------------------------- ----------------------------
+PeerOrgs:
+  # ------------------------------------------------- ----------------------------
+  # Org1
+  # ------------------------------------------------- ----------------------------
+  - Name: atc
+    Domain: atc.etsiit.ugr
+    # ------------------------------------------------- ----------------------------
+    # "Especificaciones"
+    # ------------------------------------------------- ----------------------------
+    # Descomente esta sección para habilitar la definición explícita de hosts en su
+    # configuración. La mayoría de los usuarios querrán usar la plantilla, a continuación
+    #
+    # Specs es una matriz de entradas de Spec. Cada entrada de Spec consta de dos campos:
+    #    - Hostname: (Requerido) El nombre de host deseado, sin el dominio.
+    #    - CommonName: (Opcional) Especifica la plantilla o la anulación explícita para
+    #                  el CN. Por defecto, esta es la plantilla:
+    #
+    #                               "{{.Hostname}}. {{.Domain}}"
+    #
+    #                  que obtiene sus valores de Spec.Hostname y
+    #                  Org.Domain, respectivamente.
+    # ------------------------------------------------- ----------------------------
+    # Especificaciones:
+    #    - Hostname: foo # implícitamente "foo.org1.example.com"
+    #      CommonName: foo27.org5.example.com # anula el FQDN basado en nombre de host establecido arriba
+    #    - Hostname: bar
+    #    - Hostname: baz
+    # ------------------------------------------------- ----------------------------
+    # "Plantilla"
+    # ------------------------------------------------- ----------------------------
+    # Permite la definición de 1 o más hosts que se crean de forma secuencial
+    # de una plantilla. Por defecto, esto se ve como "peer% d" desde 0 hasta Count-1.
+    # Puede anular el número de nodos (Recuento), el índice de inicio (Inicio)
+    # o la plantilla utilizada para construir el nombre (nombre de host).
+    #
+    # Nota: la plantilla y las especificaciones no se excluyen mutuamente. Puedes definir ambos
+    # secciones y los nodos agregados se crearán para usted. Tener cuidado con
+    # colisiones de nombres
+    # ------------------------------------------------- ----------------------------
+    Template:
+      Count: 1
+      # Start: 5
+      # Hostname: {{.Prefix}} {{. Index}} # predeterminado
+    # ------------------------------------------------- ----------------------------
+    # "Usuarios"
+    # ------------------------------------------------- ----------------------------
+    # Count: el número de cuentas de usuario _in además_ de Admin.
+    # ------------------------------------------------- ----------------------------
+    Users:
+      Count: 1
+  # ---------------------------------------------------------------------------
+  # Org2: Mirar "Org1" para las especificaciones
+  # ---------------------------------------------------------------------------
+  - Name: decsai
+    Domain: decsai.etsiit.ugr
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  # ---------------------------------------------------------------------------
+  # Org3: Mirar "Org1" para las especificaciones
+  # ---------------------------------------------------------------------------
+  - Name: lsi
+    Domain: lsi.etsiit.ugr
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  # ---------------------------------------------------------------------------
+  # Org4: Mirar "Org1" para las especificaciones
+  # ---------------------------------------------------------------------------
+  - Name: tstc
+    Domain: tstc.etsiit.ugr
+    Template:
+      Count: 1
+    Users:
+      Count: 1

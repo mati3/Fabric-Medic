@@ -1,0 +1,63 @@
+name: "atc Client"
+version: "1.0"
+
+client:
+  organization: atc
+  credentialStore:
+    path: "./hfc-key-store"
+    cryptoStore:
+      path: "./hfc-key-store"
+      
+channels:
+  channelall:
+    orderers:
+      - orderer.etsiit.ugr
+    peers:
+      peer0.atc.etsiit.ugr:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+
+organizations:
+  atc:
+    mspid: atcMSP
+    peers:
+      - peer0.atc.etsiit.ugr
+    certificateAuthorities:
+      - ca.atc.etsiit.ugr
+    adminPrivateKey:
+      path: medic-network/crypto-config/peerOrganizations/atc.etsiit.ugr/users/Admin@atc.etsiit.ugr/msp/keystore/1700ac4e6cdbe162cd77a1ddbd1c6855a85c5839bf3c381d0e0e1e736a9491bb_sk
+    signedCert:
+      path: medic-network/crypto-config/peerOrganizations/atc.etsiit.ugr/users/Admin@atc.etsiit.ugr/msp/signcerts/Admin@atc.etsiit.ugr-cert.pem
+
+orderers:
+  orderer.etsiit.ugr:
+    url: grpc://localhost:7050
+    grpcOptions:
+      ssl-target-name-override: orderer.etsiit.ugr
+      grpc-max-send-message-length: 5000
+    tlsCACerts:
+      path: medic-network/crypto-config/ordererOrganizations/etsiit.ugr/msp/tlscacerts/tlsca.etsiit.ugr-cert.pem
+
+peers:
+  peer0.atc.etsiit.ugr:
+    url: grpc://localhost:7051
+    eventUrl: grpc://localhost:7053
+    grpcOptions:
+      ssl-target-name-override: peer0.atc.etsiit.ugr
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: medic-network/crypto-config/peerOrganizations/atc.etsiit.ugr/peers/peer0.atc.etsiit.ugr/msp/tlscacerts/tlsca.atc.etsiit.ugr-cert.pem
+
+certificateAuthorities:
+  ca.atc.etsiit.ugr:
+    url: http://localhost:7054
+    httpOptions:
+      verify: false
+    tlsCACerts:
+      path: medic-network/crypto-config/peerOrganizations/atc.etsiit.ugr/ca/ca.atc.etsiit.ugr-cert.pem
+    registrar:
+      - enrollId: admin
+        enrollSecret: adminpw
+    caName: caATC
