@@ -1,0 +1,47 @@
+
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" #nombre />
+      </div>
+      <div *ngIf="angForm.controls['nombre'].invalid && (angForm.controls['nombre'].dirty || angForm.controls['nombre'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['nombre'].errors.required">
+          Nombre es un campo obligatorio.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Principio Activo </label>
+        <input type="text" class="form-control" formControlName="principioActivo" #principioActivo />
+      </div>
+      <div *ngIf="angForm.controls['principioActivo'].invalid && (angForm.controls['principioActivo'].dirty || angForm.controls['principioActivo'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['principioActivo'].errors.required">
+          Principio Activo es un campo obligatorio.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Formato </label>
+        <input type="text" class="form-control" formControlName="formato" #formato />
+      </div>
+      <div *ngIf="angForm.controls['formato'].invalid && (angForm.controls['formato'].dirty || angForm.controls['formato'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['formato'].errors.required">
+          Formato es un campo obligatorio.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Propietario </label>
+        <input type="text" class="form-control" formControlName="propietario" #propietario />
+      </div>
+      <div *ngIf="angForm.controls['propietario'].invalid && (angForm.controls['propietario'].dirty || angForm.controls['propietario'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['propietario'].errors.required">
+          Propietario es un campo obligatorio.
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="addMedic(nombre.value, principioActivo.value, formato.value, propietario.value)"
+          [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">
+          Add Medic
+        </button>
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,45 @@
+﻿<!-- nav *ngIf="currentUser" -->
+<nav class="navbar navbar-expand  bg-info text-white" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link text-white" routerLink="/">Home</a>
+        <a class="nav-item nav-link text-white" routerLink="medics/add">Create medic</a>
+        <a class="nav-item nav-link text-white" routerLink="medics">All Medics</a>
+        <a class="nav-item nav-link text-white" (click)="logout()">Logout</a>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="i-am-centered">
+        <div class="row">
+            <div class="col-sm-8 column-in-center">
+                <alert></alert>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- credits -->
+
+
+	 <footer class="page-footer font-small  blue pt-4 ">
+	 <div class="container-fluid text-center text-md-left">
+	  <ul class="text-info">
+	  <div class="row">
+	    <div class="col l6 s12">
+		<p>Fundación "Mati_TFG"</p>
+		</div>
+        <div class="col l6 s12">
+		<p>Terminos de uso</p>
+		</div>
+        <div class="col l6 s12" >
+		<p>Politica de privacidad</p>
+		</div>
+        <div class="col l6 s12">
+		<p>Derechos de autor</p>
+		</div>
+	  </div>
+	  </ul>
+	</div>	
+	</footer>

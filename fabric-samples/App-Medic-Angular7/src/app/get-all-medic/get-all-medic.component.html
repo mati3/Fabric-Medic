@@ -1,0 +1,21 @@
+<table class="table table-hover table-bordered">
+  <thead>
+  <tr>
+      <td>Id</td>
+      <td>Nombre</td>
+      <td>PrincipioActivo</td>
+      <td>Formato</td>
+      <td>Propietario</td>
+  </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let medic of medics">
+          <td>{{ medic.id}}</td>
+          <td>{{ medic["nombre"]}}</td>
+          <td>{{ medic["principioActivo"]}}</td>
+          <td>{{ medic["formato"]}}</td>
+          <td>{{ medic["propietario"]}}</td>
+      </tr>
+  </tbody>
+</table>
