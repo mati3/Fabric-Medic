@@ -11,10 +11,10 @@ services:
             - FABRIC_CA_SERVER_CA_NAME=caATC
             - FABRIC_CA_SERVER_TLS_ENABLED=true
             - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.atc.etsiit.ugr-cert.pem
-            - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/7ec5ea3b0575403d7a6c29d34ac8909da4c0a809ab24eb79c22fbc984e0454ee_sk
+            - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/CA_PRIVATE_KEY
         ports:
             - "7054:7054"
-        command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.atc.etsiit.ugr-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/7ec5ea3b0575403d7a6c29d34ac8909da4c0a809ab24eb79c22fbc984e0454ee_sk -b admin:adminpw -d'
+        command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.atc.etsiit.ugr-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/CA_PRIVATE_KEY -b admin:adminpw -d'
         volumes:
             - ../crypto-config/peerOrganizations/atc.etsiit.ugr/ca/:/etc/hyperledger/fabric-ca-server-config
         container_name: ca_peerAtc

@@ -21,3 +21,9 @@ if [ "$?" -ne 0 ]; then
   echo "Failed to generate channel configuration channelID channelall"
   exit 1
 fi
+
+CURRENT_DIR=$PWD"/deployment"
+cd crypto-config/peerOrganizations/atc.etsiit.ugr/ca/
+PRIV_KEY=$(ls *_sk)
+cd $CURRENT_DIR
+sed -i "s/CA_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose-node1.yml
