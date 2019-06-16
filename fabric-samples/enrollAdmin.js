@@ -11,7 +11,7 @@ var Fabric_CA_Client = require('fabric-ca-client');
 var fs = require('fs');
 var path = require('path');
 
-var firstnetwork_path = path.resolve('..', '..', 'nodo/fabric-samples/medic-network');
+var firstnetwork_path = path.resolve('..', '..', '/Fabric-Medic/fabric-samples/medic-network');
 var atctlscacert_path = path.resolve(firstnetwork_path, 'crypto-config', 'peerOrganizations', 'atc.etsiit.ugr', 'tlsca', 'tlsca.atc.etsiit.ugr-cert.pem');
 var atctlscacert = fs.readFileSync(atctlscacert_path, 'utf8');
 
