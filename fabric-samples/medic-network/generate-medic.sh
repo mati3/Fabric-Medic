@@ -27,3 +27,11 @@ cd crypto-config/peerOrganizations/atc.etsiit.ugr/ca/
 PRIV_KEY=$(ls *_sk)
 cd $CURRENT_DIR
 sed -i "s/CA_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose-node1.yml
+
+# para connection de atc desde api rest
+cd ../crypto-config/peerOrganizations/atc.etsiit.ugr/users/Admin@atc.etsiit.ugr/msp/keystore/
+PRIV_KEYSTORE=$(ls *_sk)
+CURRENT_DIR="/home/nodo/Fabric-Medic/fabric-samples/medic-network"
+cd $CURRENT_DIR
+sed -i "s/CA_KEYSTORE/${PRIV_KEYSTORE}/g" connection.yml
+

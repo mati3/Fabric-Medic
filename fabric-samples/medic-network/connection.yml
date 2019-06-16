@@ -27,7 +27,7 @@ organizations:
     certificateAuthorities:
       - ca.atc.etsiit.ugr
     adminPrivateKey:
-      path: medic-network/crypto-config/peerOrganizations/atc.etsiit.ugr/users/Admin@atc.etsiit.ugr/msp/keystore/1700ac4e6cdbe162cd77a1ddbd1c6855a85c5839bf3c381d0e0e1e736a9491bb_sk
+      path: medic-network/crypto-config/peerOrganizations/atc.etsiit.ugr/users/Admin@atc.etsiit.ugr/msp/keystore/PRIV_KEYSTORE
     signedCert:
       path: medic-network/crypto-config/peerOrganizations/atc.etsiit.ugr/users/Admin@atc.etsiit.ugr/msp/signcerts/Admin@atc.etsiit.ugr-cert.pem
 
