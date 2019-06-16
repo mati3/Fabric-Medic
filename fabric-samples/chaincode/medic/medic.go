@@ -75,14 +75,14 @@ func (s *SmartContract) queryMedic(APIstub shim.ChaincodeStubInterface, args []s
 
 func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Response {
 	medics := []Medic{
-		Medic{Nombre: "Simvastatina", PrincipioActivo: "Para controlar el colesterol", Formato: "pastillas", Propietario: "Tomoko"},
-		Medic{Nombre: "Aspirina", PrincipioActivo: "Para la fiebre", Formato: "sobres", Propietario: "Brad"},
-		Medic{Nombre: "Omeprazol", PrincipioActivo: "Para la acidez de estómago", Formato: "jarabe", Propietario: "Jin Soo"},
-		Medic{Nombre: "Ramipril", PrincipioActivo: "Para la hipertensión", Formato: "gotas", Propietario: "Max"},
+		Medic{Nombre: "Simvastatina", PrincipioActivo: "Para controlar el colesterol", Formato: "pastillas", Propietario: "Juan"},
+		Medic{Nombre: "Aspirina", PrincipioActivo: "Para la fiebre", Formato: "sobres", Propietario: "Miguel"},
+		Medic{Nombre: "Omeprazol", PrincipioActivo: "Para la acidez de estómago", Formato: "jarabe", Propietario: "Sonia"},
+		Medic{Nombre: "Ramipril", PrincipioActivo: "Para la hipertensión", Formato: "gotas", Propietario: "Antonio"},
 		Medic{Nombre: "Co.codamol", PrincipioActivo: "Para aliviar el dolor", Formato: "pomada", Propietario: "Adriana"},
-		Medic{Nombre: "Warfarina Sódica", PrincipioActivo: "Anticuagulante", Formato: "inyectables", Propietario: "Michel"},
-		Medic{Nombre: "Amosxicilina", PrincipioActivo: "Antibiótico", Formato: "supositorios", Propietario: "Aarav"},
-		Medic{Nombre: "Amitriptilina", PrincipioActivo: "Contra la depresión", Formato: "parches", Propietario: "Pari"},
+		Medic{Nombre: "Warfarina Sódica", PrincipioActivo: "Anticuagulante", Formato: "inyectables", Propietario: "Elias"},
+		Medic{Nombre: "Amosxicilina", PrincipioActivo: "Antibiótico", Formato: "supositorios", Propietario: "Marta"},
+		Medic{Nombre: "Amitriptilina", PrincipioActivo: "Contra la depresión", Formato: "parches", Propietario: "Pedro"},
 		Medic{Nombre: "Colecalciferol", PrincipioActivo: "Una vitamina D", Formato: "efervescentes", Propietario: "Valeria"},
 	}
 
