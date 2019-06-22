@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hyperledger/fabric-samples.git"
+    "url": "git+https://github.com/mati3/Fabric-Medic.git"
   },
   "author": "Matilde Cabrera González",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hyperledger/fabric-samples/issues"
+    "url": "https://github.com/mati3/Fabric-Medic/issues"
   },
-  "homepage": "https://github.com/hyperledger/fabric-samples#readme",
+  "homepage": "https://github.com/mati3/Fabric-Medic#readme",
   "dependencies": {
     "@angular/cli": "^7.1.0",
     "body-parser": "^1.18.3",
