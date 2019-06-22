@@ -87,6 +87,7 @@ Empezamos con una maquina virtual ubuntu-16.04.6-desktop-amd64.iso que será nue
 **Podemos ver una lista de medicamentos en localhost:8081/api/medics**
 
 **Seguimos con el Framework Angular en node1**
+
     nvm install 10.12.0
     nvm use 10.12.0
     npm install @angular/cli@7.1.0
